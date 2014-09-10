@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>dasdasdads</title>
+    <title></title>
   </head>
   <body>
 
