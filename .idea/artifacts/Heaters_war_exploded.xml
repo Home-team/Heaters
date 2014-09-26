@@ -6,8 +6,16 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Heaters" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="h2-1.4.181" />
+          <element id="library" level="project" name="tomcat-dbcp-8.0.0-rc1" />
+          <element id="library" level="project" name="tomcat-6.0.33-tomcat-juli" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-fileupload-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/org.apache.felix.webconsole-1.2.2.jar" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="Heaters/web/Web" />
+      <element id="directory" name="img" />
     </root>
   </artifact>
 </component>
