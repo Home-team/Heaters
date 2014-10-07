@@ -36,6 +36,7 @@ public class loadImg extends HttpServlet {
             DiskFileItem item = null;
             Images image = new Images();
             while (iterImg.hasNext()) {
+                image.setHeater_id(req.getParameter("heater_id"));
                 item = (DiskFileItem) iterImg.next();
                 if(!item.isFormField()) {
                     image.setName(item.getName());

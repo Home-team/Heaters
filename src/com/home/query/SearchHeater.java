@@ -5,6 +5,8 @@ public class SearchHeater {
 
     }
 
+    private String id;
+
     private String minPrice;
     private String maxPrice;
 
@@ -20,6 +22,14 @@ public class SearchHeater {
     private String type;
     private String producer;
     private String protection;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getMinPrice() {
         return minPrice;

@@ -88,6 +88,10 @@ public class JdbcHeaterDao {
         ArrayList<String> parameter = new ArrayList<>();
         StringBuffer query = new StringBuffer("SELECT * FROM `heater` WHERE ");
 
+        if(search.getId() != null) {
+            parameter.add("heater.`id` = '"+search.getId()+"'");
+        }
+
         if(search.getType() != null) {
             parameter.add("heater.`type` = '"+search.getType()+"'");
         }
@@ -189,5 +193,47 @@ public class JdbcHeaterDao {
 
         Heater[] h = new Heater[heaters.size()];
         return heaters.toArray(h);
+    }
+
+    public Heater getLast() {
+        Connection connection = null;
+        ResultSet rs = null;
+        Statement st = null;
+        Heater temp = null;
+
+        JdbcImagesDao imagesDao = new JdbcImagesDao();
+
+        connection = jdbcDao.createConnection();
+        try {
+            st = connection.createStatement();
+            rs = st.executeQuery("SELECT heater.id FROM `heater` WHERE 1 ORDER BY heater.id DESC LIMIT 1");
+
+            if(rs.next()) {
+                temp = new Heater();
+                temp.setId(rs.getString("id"));
+                temp.setName(rs.getString("name"));
+                temp.setType(rs.getString("type"));
+                temp.setProducer(rs.getString("producer"));
+                temp.setCovering(rs.getString("covering"));
+                temp.setPower(rs.getString("power"));
+                temp.setProtection(rs.getString("protection"));
+                temp.setPrice(rs.getString("price"));
+                temp.setImageses(imagesDao.findByHeaterId(temp.getId()));
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            System.err.println("SQL Query error!");
+        } finally {
+            try {
+                connection.close();
+                st.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return temp;
     }
 }

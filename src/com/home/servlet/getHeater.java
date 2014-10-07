@@ -13,73 +13,64 @@ import java.io.File;
 import java.io.IOException;
 
 public class getHeater extends HttpServlet{
+    protected boolean valid(String target) {
+        if(target != null) {
+            if(!target.equals("null")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     protected SearchHeater generateQuery(HttpServletRequest req) {
         SearchHeater temp = new SearchHeater();
 
-        if(!req.getParameter("offset").equals("null")) {
+        if(valid(req.getParameter("id"))) {
+            temp.setId(req.getParameter("id"));
+        }
+
+        if(valid(req.getParameter("offset"))) {
             temp.setOffset(req.getParameter("offset"));
-        } else {
-            temp.setOffset(null);
         }
 
-        if(!req.getParameter("amount").equals("null")) {
+        if(valid(req.getParameter("amount"))) {
             temp.setAmount(req.getParameter("amount"));
-        } else {
-            temp.setAmount(null);
         }
 
-        if(!req.getParameter("type").equals("null")) {
+        if(valid(req.getParameter("type"))) {
             temp.setType(req.getParameter("type"));
-        } else {
-            temp.setType(null);
         }
 
-        if(!req.getParameter("producer").equals("null")) {
+        if(valid(req.getParameter("producer"))) {
             temp.setProducer(req.getParameter("producer"));
-        } else {
-            temp.setProducer(null);
         }
 
-        if(!req.getParameter("coveringFrom").equals("null")) {
+        if(valid(req.getParameter("coveringFrom"))) {
             temp.setMinCovering(req.getParameter("coveringFrom"));
-        } else {
-            temp.setMinCovering(null);
         }
 
-        if(!req.getParameter("coveringTo").equals("null")) {
+        if(valid(req.getParameter("coveringTo"))) {
             temp.setMaxCovering(req.getParameter("coveringTo"));
-        } else {
-            temp.setMaxCovering(null);
         }
 
-        if(!req.getParameter("powerFrom").equals("null")) {
+        if(valid(req.getParameter("powerFrom"))) {
             temp.setMinPower(req.getParameter("powerFrom"));
-        } else {
-            temp.setMinPower(null);
         }
 
-        if(!req.getParameter("powerTo").equals("null")) {
+        if(valid(req.getParameter("powerTo"))) {
             temp.setMaxPower(req.getParameter("powerTo"));
-        } else {
-            temp.setMaxPower(null);
         }
 
-        if(!req.getParameter("protection").equals("null")) {
+        if(valid(req.getParameter("protection"))) {
             temp.setProtection(req.getParameter("protection"));
-        } else {
-            temp.setProtection(null);
         }
 
-        if(!req.getParameter("priceFrom").equals("null")) {
+        if(valid(req.getParameter("priceFrom"))) {
             temp.setMinPrice(req.getParameter("priceFrom"));
-        } else {
-            temp.setMinPrice(null);
         }
 
-        if(!req.getParameter("priceTo").equals("null")) {
+        if(valid(req.getParameter("priceTo"))) {
             temp.setMaxPrice(req.getParameter("priceTo"));
-        } else {
-            temp.setMaxPrice(null);
         }
 
         return temp;
@@ -90,7 +81,7 @@ public class getHeater extends HttpServlet{
         buffer.append("[");
         if(target.length > 0) {
             buffer.append(target[0].toString());
-            for(int i = 0; i<target.length; i++) {
+            for(int i = 1; i<target.length; i++) {
                 buffer.append(", ");
                 buffer.append(target[i].toString());
             }

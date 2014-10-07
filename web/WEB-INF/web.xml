@@ -22,4 +22,34 @@
         <servlet-name>loadImg</servlet-name>
         <url-pattern>/loadImg</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addHeater</servlet-name>
+        <servlet-class>com.home.servlet.addHeater</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addHeater</servlet-name>
+        <url-pattern>/addHeater</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addComment</servlet-name>
+        <servlet-class>com.home.servlet.addComment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addComment</servlet-name>
+        <url-pattern>/addComment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getComment</servlet-name>
+        <servlet-class>com.home.servlet.getComment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getComment</servlet-name>
+        <url-pattern>/getComment</url-pattern>
+    </servlet-mapping>
 </web-app>
