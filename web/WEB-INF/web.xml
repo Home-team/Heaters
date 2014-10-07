@@ -52,4 +52,24 @@
         <servlet-name>getComment</servlet-name>
         <url-pattern>/getComment</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>removeComment</servlet-name>
+        <servlet-class>com.home.servlet.removeComment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>removeComment</servlet-name>
+        <url-pattern>/removeComment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editHeater</servlet-name>
+        <servlet-class>com.home.servlet.editHeater</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>editHeater</servlet-name>
+        <url-pattern>/editHeater</url-pattern>
+    </servlet-mapping>
 </web-app>
