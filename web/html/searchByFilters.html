@@ -1,0 +1,98 @@
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Поиск</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/search.css"/>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/searchByFilters.js"></script>
+    <script src="../js/addSearchResults.js"></script>
+    <script src="../js/backTop.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="navbar ">
+        <nav class="navbar-inner topbar">
+            <a class="brand" href="#">Мы дарим вам тепло</a>
+            <div id="searchInTopbar">
+                <button class="pull-right btn"><i class="icon-search"></i> Поиск по названию</button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="span12 form-content">
+            <p id="back-top">
+                <a href="#top"><span></span></a>
+            </p>
+            <div class="myCenter">
+                <select id="covering">
+                <option>Размер помещения</option>
+                <option>Менее 10</option>
+                <option>10-15</option>
+                <option>16-20</option>
+                <option>21-25</option>
+                <option>26-30</option>
+                <option>31-50</option>
+                <option>Более 50</option>
+            </select>
+                <select id="protection">
+                    <option>Функции защиты</option>
+                    <option>Защита от перегрева</option>
+                    <option>Защита от брызг воды</option>
+                    <option>Замок от детей</option>
+                </select>
+                <select id="price">
+                    <option>Цена</option>
+                    <option>До 200 грн</option>
+                    <option>200-300 грн</option>
+                    <option>300-500 грн</option>
+                    <option>500-700 грн</option>
+                    <option>700-1000 грн</option>
+                    <option>1000-1500 грн</option>
+                    <option>1500-2000 грн</option>
+                    <option>2000-3000 грн</option>
+                    <option>3000-5000 грн</option>
+                    <option>5000 грн и выше</option>
+                </select>
+            </div>
+
+            <table class="table table-hover" id="tableOfResults">
+                <tbody>
+
+                </tbody>
+            </table>
+            <textarea id="tmp" rows="3">[{"id":1, "name":"q", "type":"тип", "producer":"производитель",
+                "covering":"покрытие", "power":"мощность", "protection":"защита", "price":"1", "images": [{"id":1,
+                "name":"q", "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":2, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":3, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}]}, {"id":1, "name":"q", "type":"q",
+                "producer":"q", "covering":"q", "power":"q", "protection":"q", "price":"1", "images": [{"id":1,
+                "name":"q", "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":2, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":3, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}]}, {"id":2, "name":"q", "type":"q",
+                "producer":"q", "covering":"q", "power":"q", "protection":"q", "price":"2", "images": [{"id":4,
+                "name":"q", "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":5, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}]}, {"id":3, "name":"q", "type":"q",
+                "producer":"q", "covering":"q", "power":"q", "protection":"q", "price":"3", "images": [{"id":6,
+                "name":"q", "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}]}, {"id":4, "name":"q",
+                "type":"q", "producer":"q", "covering":"q", "power":"q", "protection":"q", "price":"4", "images": []},
+                {"id":5, "name":"q", "type":"тип", "producer":"производитель", "covering":"покрытие",
+                "power":"мощность", "protection":"защита", "price":"1", "images": [{"id":1, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":2, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":3, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}]}, {"id":6, "name":"q", "type":"тип",
+                "producer":"производитель", "covering":"покрытие", "power":"мощность", "protection":"защита",
+                "price":"1", "images": [{"id":1, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":2, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}, {"id":3, "name":"q",
+                "url":"https://pp.vk.me/c608929/v608929091/11140/Sq9Ba_602eQ.jpg"}]}]</textarea>
+        </div>
+    </div>
+</div>
+</body>
+</html>

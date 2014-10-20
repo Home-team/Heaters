@@ -1,0 +1,28 @@
+img {
+    width: 175px;
+}
+.myThumbnail {
+    display: inline-block;
+    margin: 2px;
+}
+#tableOfFeatures {
+    width: 770px;
+}
+.tdWidth {
+    width: 443px;
+}
+.nameUser {
+    font-weight: bold;
+    margin: 0 0 0;
+}
+.myTextArea {
+    resize: none;
+    width: 300px;
+}
+#btnAddComment {
+    margin-bottom: 7px;
+    margin-left: 12px
+}
+.commentUser {
+    width: 750px;
+}

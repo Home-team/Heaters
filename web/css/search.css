@@ -1,0 +1,60 @@
+select {
+    background-color: rgba(228, 225, 218, 0.64);
+    width: 170px;
+    margin: 0 70px 7px 45px;
+}
+img {
+    width: 115px;
+}
+td {
+    vertical-align: middle !important;
+}
+#tableOfResults-name {
+    width: 540px;
+}
+#back-top {
+    position: fixed;
+    bottom: 30px;
+    margin-left: -130px;
+}
+#back-top a {
+    width: 108px;
+    display: block;
+    text-align: center;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #bbb;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+#back-top a:hover {
+    color: #000;
+}
+#back-top span {
+    width: 108px;
+    height: 108px;
+    display: block;
+    margin-bottom: 7px;
+    background: #9b9b9b url("../img/page-up.png") no-repeat center center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+#back-top a:hover span {
+    background-color: #545454;
+}
+#searchInContent {
+    text-align: center;
+}
+#searchInContent input {
+    width: 260px;
+}
+#searchInContent button {
+    margin-top: -10px;
+    height: 30px;
+}

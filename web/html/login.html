@@ -1,0 +1,47 @@
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/login.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="form-signin">
+        <h2 class="form-signin-heading">Авторизация</h2>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" maxlength="16" id="login" class="input-block-level" placeholder="Login" name="login">
+            </div>
+        </div>\
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="password" maxlength="16" id="password" class="input-block-level" placeholder="Password" name="password">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="password" maxlength="16" id="re_password" class="input-block-level reg-input" placeholder="Re-Password">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" id="name" maxlength="16" class="input-block-level reg-input" placeholder="Name" name="name">
+            </div>
+        </div>
+
+        <div class="pagination-centered">
+            <input class="btn btn-large btn-primary" type="submit" value="Войти" disabled id="inputSignIn">
+            <a class="btn btn-large btn-primary" id="btnReg">Регистрация</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
