@@ -134,6 +134,6 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/searchByName</welcome-file>
+        <welcome-file>/html/searchByName.html</welcome-file>
     </welcome-file-list>
 </web-app>
