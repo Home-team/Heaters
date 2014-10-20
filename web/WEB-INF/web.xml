@@ -72,4 +72,24 @@
         <servlet-name>editHeater</servlet-name>
         <url-pattern>/editHeater</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>authorization</servlet-name>
+        <servlet-class>com.home.servlet.Authorization</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>authorization</servlet-name>
+        <url-pattern>/authorization</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registration</servlet-name>
+        <servlet-class>com.home.servlet.Registration</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
 </web-app>

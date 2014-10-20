@@ -84,6 +84,14 @@ public class MainJdbcDao {
                     "  PRIMARY KEY (`id`),\n" +
                     "  CONSTRAINT `heater` FOREIGN KEY (`heater_id`) REFERENCES `heater` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\n" +
                     ") ENGINE=InnoDB");
+            statement.executeUpdate("DROP TABLE IF EXISTS `user`");
+            statement.executeUpdate("CREATE TABLE `user` (\n" +
+                    "            `id` int(11) NOT NULL AUTO_INCREMENT,\n" +
+                    "            `login` varchar(255) DEFAULT NULL,\n" +
+                    "            `password` varchar(255) DEFAULT NULL,\n" +
+                    "            `name` varchar(255) DEFAULT NULL,\n" +
+                    "            PRIMARY KEY (`id`)\n" +
+                    "            ) ENGINE=InnoDB");
         } catch (SQLException e) {
             System.err.println(e);
         }
