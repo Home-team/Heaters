@@ -13,6 +13,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/commons-fileupload-1.2.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/org.apache.felix.webconsole-1.2.2.jar" />
           <element id="library" level="project" name="org.apache.felix.webconsole-1.2.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/tomcat-6.0.33-tomcat-juli.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Heaters/web/Web" />

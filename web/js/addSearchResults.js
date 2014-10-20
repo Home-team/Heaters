@@ -1,5 +1,5 @@
 function addSearchResults(request) {
-    var json = $("#tmp").text();
+    /*var json = $("#tmp").text();
 
     var response = JSON.parse(json);
     var url;
@@ -7,9 +7,9 @@ function addSearchResults(request) {
     var name;
     var description;
     var price;
-    var costs;
+    var costs;*/
 
-    for (var i = 0; i in response != false; i++) {
+   /* for (var i = 0; i in response != false; i++) {
         if (response[i]["images"].length != 0) {
             url = response[i]["images"][0]["url"];
         } else {
@@ -52,8 +52,8 @@ function addSearchResults(request) {
             "       <button class='btn btn-warning btn-large'>Купить</button>" +
             "   </td>" +
             "</tr>");
-    }
-    /*$.ajax({
+    }*/
+    $.ajax({
             type: 'get',
             url: request,
             success: function (data) {
@@ -108,5 +108,5 @@ function addSearchResults(request) {
                 alert("Неудачный запрос!");
             }
         }
-    );*/
+    );
 }

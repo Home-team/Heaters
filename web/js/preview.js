@@ -2,31 +2,12 @@ $(document).ready(function () {
     function addTabDescription() {
         var id = location.search.split("=")[1];
         var request = "/getHeater?id=" + id;
-        var response = JSON.parse($("#tmp").val());
-        var elem = $("#photoHeater");
-        for (var i = 0; i in response[0]["images"] != false; i++) { //добавление фото обогревателей
-            elem.append("" +
-                "<a href='" + response[0]["images"][i]["url"] + "' class='thumbnail myThumbnail' " +
-                "data-lightbox='roadtrip'><img " +
-                "src='" + response[0]["images"][i]["url"] + "'/></a>");
-        }
-        $("#nameHeater").append("<td>" + response[0]["name"] + "</td>");
-        $("#typeHeater").append("<td>" + response[0]["type"] + "</td>");
-        $("#producerHeater").append("<td>" + response[0]["producer"] + "</td>");
-        $("#coveringHeater").append("<td>" + response[0]["covering"] + "</td>");
-        $("#powerHeater").append("<td>" + response[0]["power"] + "</td>");
-        $("#protectionHeater").append("<td>" + response[0]["protection"] + "</td>");
-        $("#priceHeater").append("<td>" + response[0]["price"] + "</td>");
-        /*$.ajax({
-         type: 'get',
-         url: request,
-         success: function (data) {
-         var response = JSON.parse(data);
+        /*var response = JSON.parse($("#tmp").val());
          var elem = $("#photoHeater");
          for (var i = 0; i in response[0]["images"] != false; i++) { //добавление фото обогревателей
          elem.append("" +
          "<a href='" + response[0]["images"][i]["url"] + "' class='thumbnail myThumbnail' " +
-         "data-lightbox='roadtrip'><img" +
+         "data-lightbox='roadtrip'><img " +
          "src='" + response[0]["images"][i]["url"] + "'/></a>");
          }
          $("#nameHeater").append("<td>" + response[0]["name"] + "</td>");
@@ -35,18 +16,37 @@ $(document).ready(function () {
          $("#coveringHeater").append("<td>" + response[0]["covering"] + "</td>");
          $("#powerHeater").append("<td>" + response[0]["power"] + "</td>");
          $("#protectionHeater").append("<td>" + response[0]["protection"] + "</td>");
-         $("#priceHeater").append("<td>" + response[0]["price"] + "</td>");
-         },
-         error: function () {
-         alert("Неудачный запрос!");
-         }
-         }
-         );*/
+         $("#priceHeater").append("<td>" + response[0]["price"] + "</td>");*/
+        $.ajax({
+                type: 'get',
+                url: request,
+                success: function (data) {
+                    var response = JSON.parse(data);
+                    var elem = $("#photoHeater");
+                    for (var i = 0; i in response[0]["images"] != false; i++) { //добавление фото обогревателей
+                        elem.append("" +
+                            "<a href='" + response[0]["images"][i]["url"] + "' class='thumbnail myThumbnail' " +
+                            "data-lightbox='roadtrip'><img " +
+                            "src='" + response[0]["images"][i]["url"] + "'/></a>");
+                    }
+                    $("#nameHeater").append("<td>" + response[0]["name"] + "</td>");
+                    $("#typeHeater").append("<td>" + response[0]["type"] + "</td>");
+                    $("#producerHeater").append("<td>" + response[0]["producer"] + "</td>");
+                    $("#coveringHeater").append("<td>" + response[0]["covering"] + "</td>");
+                    $("#powerHeater").append("<td>" + response[0]["power"] + "</td>");
+                    $("#protectionHeater").append("<td>" + response[0]["protection"] + "</td>");
+                    $("#priceHeater").append("<td>" + response[0]["price"] + "</td>");
+                },
+                error: function () {
+                    alert("Неудачный запрос!");
+                }
+            }
+        );
     }
 
     function addTabComments() {
         var id = location.search.split("=")[1];
-        var request = "/getComment?id=" + id;
+        var request = "/getComment?heater_id=" + id;
         var name = null;
         var comment = null;
         $.ajax({
