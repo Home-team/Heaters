@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="../css/reveal.css"/>
     <link rel="stylesheet" href="../css/preview.css"/>
     <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
     <script src="../js/lightbox.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.reveal.js"></script>
     <script src="../js/preview.js"></script>
+    <script src="../js/checkAuthorization.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="navbar ">
         <nav class="navbar-inner topbar">
-            <a class="brand" href="#">Мы дарим вам тепло</a>
+            <a class="brand" href="/searchByFilters">Мы дарим вам тепло</a>
             <div id="searchInTopbar">
-                <button class="pull-right btn"><i class="icon-search"></i> Поиск по названию</button>
+                <div class="pull-right">
+                    <a href="/searchByName" class="btn"><i class="icon-search"></i> Поиск по названию</a>
+                    <a href="/login" class="btn"><i class="icon-user"></i> Log in</a>
+                    <span class="label" style="display: none"></span>
+                </div>
             </div>
         </nav>
     </div>
@@ -30,11 +36,11 @@
         <div class="span12 form-content">
             <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
                 <ul class="nav nav-tabs">
-                    <li><a href="#tab1" data-toggle="tab">Описание</a></li>
-                    <li class="active"><a href="#tab2" data-toggle="tab">Отзывы</a></li>
+                    <li class="active"><a href="#tab1" data-toggle="tab">Описание</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Отзывы</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane " id="tab1">
+                    <div class="tab-pane active" id="tab1">
                         <ul class="thumbnails">
                             <li class="span10" id="photoHeater">
 
@@ -69,7 +75,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="tab-pane active" id="tab2">
+                    <div class="tab-pane" id="tab2">
                         <div id="modalAddComment" class="myCenter reveal-modal">
                             <textarea id="nameUser" class="myTextArea" placeholder="Выберите имя" maxlength="15"
                                       rows="1"></textarea>

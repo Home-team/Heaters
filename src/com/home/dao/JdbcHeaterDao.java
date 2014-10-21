@@ -92,6 +92,11 @@ public class JdbcHeaterDao {
             parameter.add("heater.`id` = '"+search.getId()+"'");
         }
 
+        if(search.getName() != null) {
+            parameter.add("heater.`name` = '"+search.getName()+"'");
+        }
+
+
         if(search.getType() != null) {
             parameter.add("heater.`type` = '"+search.getType()+"'");
         }

@@ -91,7 +91,7 @@ function addSearchResults(request) {
                     $("#tableOfResults").append("" +
                         "<tr>" +
                         "   <td>" +
-                        "       <img src= +'" + url + "' >" +
+                        "       <img src='" + url + "' >" +
                         "   </td>" +
                         "   <td>" +
                         "       <a href='/preview?id=" + id + "'><h3>" + name + "</h3></a>" +

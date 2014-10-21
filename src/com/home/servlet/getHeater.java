@@ -25,6 +25,10 @@ public class getHeater extends HttpServlet{
     protected SearchHeater generateQuery(HttpServletRequest req) {
         SearchHeater temp = new SearchHeater();
 
+        if(valid(req.getParameter("name"))) {
+            temp.setName(req.getParameter("name"));
+        }
+
         if(valid(req.getParameter("id"))) {
             temp.setId(req.getParameter("id"));
         }
