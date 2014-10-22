@@ -22,6 +22,10 @@ public class Authorization extends HttpServlet{
         if(user != null) {
             resp.addCookie(new Cookie("login",user.getLogin()));
         }
-        resp.getWriter().print(user);
+        if(user != null) {
+            resp.getWriter().print("true");
+        } else {
+            resp.getWriter().print("false");
+        }
     }
 }
