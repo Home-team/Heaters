@@ -14,6 +14,9 @@ import java.io.IOException;
 public class Authorization extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         JdbcUserDao userDao = new JdbcUserDao();
         User user = userDao.auth(req.getParameter("login"),req.getParameter("password"));
         if(user != null) {

@@ -11,9 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 public class getHeater extends HttpServlet{
-    protected boolean valid(String target) {
+    protected boolean valid(final String target) {
         if(target != null) {
             if(!target.equals("null")) {
                 return true;
@@ -96,6 +97,9 @@ public class getHeater extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        req.setCharacterEncoding("UTF-8");
+//        resp.setCharacterEncoding("UTF-8");
+
         resp.getWriter().print(generateJSON(new JdbcHeaterDao().find(generateQuery(req))));
     }
 }
