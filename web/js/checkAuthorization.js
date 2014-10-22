@@ -3,7 +3,6 @@ $(document).ready(function () {
     if(login == null) {
         return false;
     } else {
-        $("#searchInTopbar .icon-user").html(" Log out");
-        $("#searchInTopbar span").show().html(login);
+        $("#searchInTopbar").find("[href = '/login']").html("<i class='icon-user'></i> Log out (<b>" + login + "</b>)");
     }
 });

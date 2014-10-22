@@ -1,6 +1,6 @@
 $(document).ready(function () {
+    var id = location.search.split("=")[1];
     function addTabDescription() {
-        var id = location.search.split("=")[1];
         var request = "/getHeater?id=" + id;
         /*var response = JSON.parse($("#tmp").val());
          var elem = $("#photoHeater");
@@ -89,13 +89,12 @@ $(document).ready(function () {
         });
     });
     $("#submitComment").click(function () { //добавить комментарий
-        var name = $("#nameUser").val();
         var comment = $("#commentUser").val();
-        if (name == "" || comment == "") {
+        if (comment == "") {
             alert("Заполните поля!");
             return;
         }
-        var request = "/#?name=" + name + "&comment=" + comment;
+        var request = "/addComment?comment=" + comment + "&heater_id=" + id;
         /*$.ajax({
          type: 'get',
          url: request,

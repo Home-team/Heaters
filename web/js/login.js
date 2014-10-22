@@ -107,7 +107,7 @@ $(document).ready(function () {
                     type: 'get',
                     url: request,
                     success: function (data) {
-                        var url = "/searchByFilters";
+                        var url = "/login";
                         $(location).attr('href', url);
                     },
                     error: function () {
