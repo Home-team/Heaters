@@ -21,6 +21,7 @@ public class Authorization extends HttpServlet{
         User user = userDao.auth(req.getParameter("login"),req.getParameter("password"));
         if(user != null) {
             resp.addCookie(new Cookie("login",user.getLogin()));
+            req.getSession().setAttribute("user",user);
         }
         if(user != null) {
             resp.getWriter().print("true");

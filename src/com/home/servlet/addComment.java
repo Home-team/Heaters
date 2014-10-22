@@ -3,6 +3,7 @@ package com.home.servlet;
 import com.home.dao.JdbcCommentDao;
 import com.home.dao.JdbcHeaterDao;
 import com.home.entity.Comment;
+import com.home.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,12 +15,15 @@ import java.sql.Date;
 public class addComment extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
+        if(req.getSession().getAttribute("user") == null) {
+            resp.sendRedirect(req.getContextPath() + "/login");
+        }
+
         String text = req.getParameter("text");
         java.util.Date d = new java.util.Date();
-        if(name.length() >= 3 && text.length() >= 10 && text.length() <= 200) {
+        if(text.length() >= 10 && text.length() <= 200) {
             Comment comment = new Comment();
-            comment.setName(name);
+            comment.setName(((User)req.getSession().getAttribute("user")).getName());
             comment.setText(text);
             comment.setData(new Date(d.getTime()));
             comment.setHeater_id(req.getParameter("heater_id"));
