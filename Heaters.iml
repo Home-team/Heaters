@@ -41,7 +41,6 @@
     </orderEntry>
     <orderEntry type="library" name="commons-fileupload-1.2" level="project" />
     <orderEntry type="library" name="org.apache.felix.webconsole-1.2.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.55" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -51,6 +50,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.52 (Ubuntu)" level="application_server_libraries" />
   </component>
 </module>
 

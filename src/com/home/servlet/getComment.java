@@ -28,6 +28,9 @@ public class getComment extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         JdbcCommentDao commentDao = new JdbcCommentDao();
         resp.getWriter().print(generateJSON(commentDao.find(req.getParameter("heater_id"))));
     }

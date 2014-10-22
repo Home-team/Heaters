@@ -37,6 +37,9 @@ public class Registration extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         JdbcUserDao userDao = new JdbcUserDao();
         if(validation(req)) {
             User newUser = new User();
@@ -44,8 +47,9 @@ public class Registration extends HttpServlet {
             newUser.setPassword(req.getParameter("password"));
             newUser.setLogin(req.getParameter("login"));
             userDao.create(newUser);
+            resp.getWriter().print("true");
         } else {
-            resp.getWriter().print("Error!");
+            resp.getWriter().print("false");
         }
     }
 }

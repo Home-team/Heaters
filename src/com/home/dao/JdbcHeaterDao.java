@@ -93,7 +93,7 @@ public class JdbcHeaterDao {
         }
 
         if(search.getName() != null) {
-            parameter.add("heater.`name` = '"+search.getName()+"'");
+            parameter.add("heater.`name` LIKE '%"+search.getName()+"%'");
         }
 
 
@@ -130,7 +130,7 @@ public class JdbcHeaterDao {
         }
 
         if(search.getMaxCovering() != null) {
-            parameter.add("heater.covering <= '"+search.getMaxCovering()+"'");
+            parameter.add("heater.covering <= '" + search.getMaxCovering() + "'");
         }
 
         if(parameter.size() > 0) {
@@ -154,6 +154,7 @@ public class JdbcHeaterDao {
         } else {
             query.append(", 5");
         }
+        System.out.println(query.toString());
         return query.toString();
     }
 
