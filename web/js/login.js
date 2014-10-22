@@ -83,6 +83,7 @@ $(document).ready(function () {
                     if(data == "true") {
                         $(location).attr('href', "/searchByFilters");
                     } else {
+                        setDisabled();
                         if ($(".form-signin .authorization").length == 0) {
                             $("<div/>", {
                                 "class": "alert alert-error authorization",
@@ -122,6 +123,7 @@ $(document).ready(function () {
                         if(data == "true") {
                             $(location).attr('href', "/login");
                         } else {
+                            setDisabled();
                             alert("Неудачная попытка регистрации!");
                         }
                     },

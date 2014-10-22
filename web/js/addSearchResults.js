@@ -70,7 +70,7 @@ function addSearchResults(request) {
                     }
                     id = response[i]["id"];
                     name = response[i]["name"];
-                    description = null;
+                    description = "";
                     if (response[i]["type"] != null) {
                         description += response[i]["type"] + " | ";
                     }
@@ -98,7 +98,7 @@ function addSearchResults(request) {
                         description +
                         "   </td>" +
                         "   <td>" +
-                        "       <h3> " + price + " грн</h3>" +
+                        "       <h3> " + price + "</h3>" +
                         "       <button class='btn btn-warning btn-large'>Купить</button>" +
                         "   </td>" +
                         "</tr>");
