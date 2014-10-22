@@ -54,7 +54,7 @@ public class Comment {
         return "{" +
                 "\"id\":" + id +
                 ", \"name\":\"" + name + '\"' +
-                ", \"text\":\"" + text + '\"' +
+                ", \"comment\":\"" + text + '\"' +
                 ", \"date\":\"" + data + '\"' +
                 '}';
     }
