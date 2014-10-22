@@ -32,10 +32,10 @@ $(document).ready(function () {
                     $("#nameHeater").append("<td>" + response[0]["name"] + "</td>");
                     $("#typeHeater").append("<td>" + response[0]["type"] + "</td>");
                     $("#producerHeater").append("<td>" + response[0]["producer"] + "</td>");
-                    $("#coveringHeater").append("<td>" + response[0]["covering"] + "</td>");
-                    $("#powerHeater").append("<td>" + response[0]["power"] + "</td>");
+                    $("#coveringHeater").append("<td>" + response[0]["covering"] + " куб. м</td>");
+                    $("#powerHeater").append("<td>" + response[0]["power"] + " кВт</td>");
                     $("#protectionHeater").append("<td>" + response[0]["protection"] + "</td>");
-                    $("#priceHeater").append("<td>" + response[0]["price"] + "</td>");
+                    $("#priceHeater").append("<td>" + response[0]["price"] + " грн</td>");
                 },
                 error: function () {
                     alert("Неудачный запрос!");
