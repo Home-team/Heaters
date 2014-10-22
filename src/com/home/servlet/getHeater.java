@@ -100,6 +100,8 @@ public class getHeater extends HttpServlet{
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
+        System.out.println(req.getParameter("name"));
+
         resp.getWriter().print(generateJSON(new JdbcHeaterDao().find(generateQuery(req))));
     }
 }
