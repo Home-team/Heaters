@@ -80,8 +80,16 @@ $(document).ready(function () {
                 type: 'get',
                 url: request,
                 success: function (data) {
-                    var url = "/searchByFilters";
-                    $(location).attr('href', url);
+                    if(data == "true") {
+                        $(location).attr('href', "/searchByFilters");
+                    } else {
+                        if ($(".form-signin .authorization").length == 0) {
+                            $("<div/>", {
+                                "class": "alert alert-error authorization",
+                                text: "Неправильное имя пользователя или пароль"
+                            }).prependTo(".form-signin");
+                        }
+                    }
                 },
                 error: function () {
                     alert("Неудачный запрос!");
@@ -91,6 +99,10 @@ $(document).ready(function () {
     });
 
     $("#btnReg").click(function () {
+        var alertTag = $(".form-signin .authorization");
+        if (alertTag.length != 0) {
+            alertTag.remove();
+        }
         loginTag.val("");
         passwordTag.val("");
         rePasswordTag.slideDown();
@@ -107,8 +119,11 @@ $(document).ready(function () {
                     type: 'get',
                     url: request,
                     success: function (data) {
-                        var url = "/login";
-                        $(location).attr('href', url);
+                        if(data == "true") {
+                            $(location).attr('href', "/login");
+                        } else {
+                            alert("Неудачная попытка регистрации!");
+                        }
                     },
                     error: function () {
                         alert("Неудачный запрос!");

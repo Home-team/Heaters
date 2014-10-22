@@ -78,15 +78,15 @@ function addSearchResults(request) {
                         description += response[i]["producer"] + " | ";
                     }
                     if (response[i]["covering"] != null) {
-                        description += response[i]["covering"] + " | ";
+                        description += response[i]["covering"] + " куб. м | ";
                     }
                     if (response[i]["power"] != null) {
-                        description += response[i]["power"] + " | ";
+                        description += response[i]["power"] + " кВт | ";
                     }
                     if (response[i]["protection"] != null) {
                         description += response[i]["protection"] + " | ";
                     }
-                    price = response[i]["price"];
+                    price = response[i]["price"] + " грн";
 
                     $("#tableOfResults").append("" +
                         "<tr>" +
