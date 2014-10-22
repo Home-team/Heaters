@@ -79,7 +79,6 @@ $(document).ready(function () {
     addTabDescription();
 
     $("#btnAddComment").click(function () { //кнопка "Присоединиться к обсуждению"
-        $("#nameUser").val("");
         $("#commentUser").val("");
         $('#modalAddComment').reveal({
             animation: 'fadeAndPop',
@@ -95,36 +94,37 @@ $(document).ready(function () {
             return;
         }
         var request = "/addComment?comment=" + comment + "&heater_id=" + id;
-        /*$.ajax({
-         type: 'get',
-         url: request,
-         success: function (data) {
+        $.ajax({
+                type: 'get',
+                url: request,
+                success: function (data) {
+                    $("#tableComments tbody").append("" +
+                        "<tr>" +
+                        "   <td>" +
+                        "       <p class='nameUser'>" + $.cookie("login") + ":</p>" +
+                        "   </td>" +
+                        "   <td>" +
+                        comment +
+                        "   </td>" +
+                        "</tr>")
+                    $(".reveal-modal-bg").click();
+                },
+                error: function () {
+                    alert("Неудачный запрос!");
+                }
+            }
+        );
+        /* var login = $.cookie("login");
          $("#tableComments tbody").append("" +
          "<tr>" +
          "   <td>" +
-         "       <p class='nameUser'>" + name + "</p>" +
+         "       <p class='nameUser'>" + login + ":</p>" +
          "   </td>" +
          "   <td>" +
          comment +
          "   </td>" +
          "</tr>")
-         $(".reveal-modal-bg").click();
-         },
-         error: function () {
-         alert("Неудачный запрос!");
-         }
-         }
-         );*/
-        $("#tableComments tbody").append("" +
-            "<tr>" +
-            "   <td>" +
-            "       <p class='nameUser'>" + name + ":</p>" +
-            "   </td>" +
-            "   <td>" +
-            comment +
-            "   </td>" +
-            "</tr>")
-        $(".reveal-modal-bg").click();
+         $(".reveal-modal-bg").click();*/
     });
 });
 
