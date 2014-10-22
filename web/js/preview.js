@@ -79,13 +79,19 @@ $(document).ready(function () {
     addTabDescription();
 
     $("#btnAddComment").click(function () { //кнопка "Присоединиться к обсуждению"
-        $("#commentUser").val("");
-        $('#modalAddComment').reveal({
-            animation: 'fadeAndPop',
-            animationspeed: 250,
-            closeonbackgroundclick: true,
-            dismissmodalclass: 'close-reveal-modal'
-        });
+        var login = $.cookie("login");
+        if(login == null || login == "") {
+            $(location).attr('href', "/login");
+            return false;
+        } else {
+            $("#commentUser").val("");
+            $('#modalAddComment').reveal({
+                animation: 'fadeAndPop',
+                animationspeed: 250,
+                closeonbackgroundclick: true,
+                dismissmodalclass: 'close-reveal-modal'
+            });
+        }
     });
     $("#submitComment").click(function () { //добавить комментарий
         var comment = $("#commentUser").val();
