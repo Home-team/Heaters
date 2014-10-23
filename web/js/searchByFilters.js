@@ -107,38 +107,38 @@ $(document).ready(function () {
     var index = 0;
 
     //первая загрузка
-    addToList(index, 9);
+    addToList(index, 10);
     index += 10;
 
     //подгрузка при применении фильтров
     $("#type").change(function () {
         $("#tableOfResults tbody").empty();
-        addToList(0, 9);
+        addToList(0, 10);
         index = 10;
     });
     $("#producer").change(function () {
         $("#tableOfResults tbody").empty();
-        addToList(0, 9);
+        addToList(0, 10);
         index = 10;
     });
     $("#covering").change(function () {
         $("#tableOfResults tbody").empty();
-        addToList(0, 9);
+        addToList(0, 10);
         index = 10;
     });
     $("#power").change(function () {
         $("#tableOfResults tbody").empty();
-        addToList(0, 9);
+        addToList(0, 10);
         index = 10;
     });
     $("#protection").change(function () {
         $("#tableOfResults tbody").empty();
-        addToList(0, 9);
+        addToList(0, 10);
         index = 10;
     });
     $("#price").change(function () {
         $("#tableOfResults tbody").empty();
-        addToList(0, 9);
+        addToList(0, 10);
         index = 10;
     });
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
     $(window).scroll(function () {
         if($(window).scrollTop() + window.screen.height >= document.body.offsetHeight && isBusy == false) {
             isBusy = true;
-            addToList(index, 9);
+            addToList(index, 10);
             index += 10;
             isBusy = false;
         }

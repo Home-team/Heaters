@@ -65,25 +65,27 @@ function addSearchResults(request) {
                 var price;
 
                 for (var i = 0; i in response != false; i++) {
-                    if ((url = response[i]["images"][0]["url"]) == "null") {
+                    if (response[i]["images"].length == 0) {
                         url = "img/no-image.jpg";
+                    } else {
+                        url = response[i]["images"][0]["url"];
                     }
                     id = response[i]["id"];
                     name = response[i]["name"];
                     description = "";
-                    if (response[i]["type"] != null) {
+                    if (response[i]["type"] != "null") {
                         description += response[i]["type"] + " | ";
                     }
-                    if (response[i]["producer"] != null) {
+                    if (response[i]["producer"] != "null") {
                         description += response[i]["producer"] + " | ";
                     }
-                    if (response[i]["covering"] != null) {
-                        description += response[i]["covering"] + " куб. м | ";
+                    if (response[i]["covering"] != "null") {
+                        description += response[i]["covering"] + " кв. м | ";
                     }
-                    if (response[i]["power"] != null) {
+                    if (response[i]["power"] != "null") {
                         description += response[i]["power"] + " кВт | ";
                     }
-                    if (response[i]["protection"] != null) {
+                    if (response[i]["protection"] != "null") {
                         description += response[i]["protection"] + " | ";
                     }
                     price = response[i]["price"] + " грн";

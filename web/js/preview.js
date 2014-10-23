@@ -29,13 +29,35 @@ $(document).ready(function () {
                             "data-lightbox='roadtrip'><img " +
                             "src='" + response[0]["images"][i]["url"] + "'/></a>");
                     }
-                    $("#nameHeater").append("<td>" + response[0]["name"] + "</td>");
-                    $("#typeHeater").append("<td>" + response[0]["type"] + "</td>");
-                    $("#producerHeater").append("<td>" + response[0]["producer"] + "</td>");
-                    $("#coveringHeater").append("<td>" + response[0]["covering"] + " куб. м</td>");
-                    $("#powerHeater").append("<td>" + response[0]["power"] + " кВт</td>");
-                    $("#protectionHeater").append("<td>" + response[0]["protection"] + "</td>");
-                    $("#priceHeater").append("<td>" + response[0]["price"] + " грн</td>");
+                    var name = response[0]["name"];
+                    var type = response[0]["type"];
+                    var producer = response[0]["producer"];
+                    var covering = response[0]["covering"];
+                    var power = response[0]["power"];
+                    var protection = response[0]["protection"];
+                    var price = response[0]["price"];
+
+                    if(name != "null") {
+                        $("#nameHeater").html(name);
+                    }
+                    if(type != "null") {
+                        $("#typeHeater").html(type);
+                    }
+                    if(producer != "null") {
+                        $("#producerHeater").html(producer);
+                    }
+                    if(covering != "null") {
+                        $("#coveringHeater").html(covering);
+                    }
+                    if(power != "null") {
+                        $("#powerHeater").html(power);
+                    }
+                    if(protection != "null") {
+                        $("#protectionHeater").html(protection);
+                    }
+                    if(price != "null") {
+                        $("#priceHeater").html(price);
+                    }
                 },
                 error: function () {
                     alert("Неудачный запрос!");
