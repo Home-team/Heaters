@@ -20,8 +20,17 @@
             <a class="brand" href="/searchByFilters">Мы дарим вам тепло</a>
             <div id="searchInTopbar">
                 <div class="pull-right">
-                    <a href="/searchByName" class="btn"><i class="icon-search"></i> Поиск по названию</a>
-                    <a href="/login" id="authorization" class="btn"><i class="icon-user"></i> Log in</a>
+                    <div class="btn-group pull-right">
+                        <a href="/login" id="authorization" class="btn"><i class="icon-user"></i> Log in</a>
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="icon-search"></i> Поиск
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/searchByFilters">Поиск по фильтрам</a></li>
+                            <li><a href="/searchByName">Поиск по названию</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>

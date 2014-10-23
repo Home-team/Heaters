@@ -59,7 +59,7 @@ public class MainJdbcDao {
                     "  `name` varchar(255) DEFAULT NULL,\n" +
                     "  `type` varchar(255) DEFAULT NULL,\n" +
                     "  `producer` varchar(255) DEFAULT NULL,\n" +
-                    "  `covering` varchar(255) DEFAULT NULL,\n" +
+                    "  `covering` decimal(10,0) DEFAULT NULL,\n" +
                     "  `power` varchar(255) DEFAULT NULL,\n" +
                     "  `protection` varchar(255) DEFAULT NULL,\n" +
                     "  `price` decimal(10,0) DEFAULT NULL,\n" +
