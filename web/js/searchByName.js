@@ -20,7 +20,6 @@ $(document).ready(function () {
     $(window).scroll(function () {
         if ($(window).scrollTop() + window.screen.height >= document.body.offsetHeight && isBusy == false) {
             isBusy = true;
-            alert(1);
             addToList(index, 9);
             index += 10;
             isBusy = false;
