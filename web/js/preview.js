@@ -51,6 +51,7 @@ $(document).ready(function () {
                     }
                     if(power != "null") {
                         $("#powerHeater").html(power + " кВт");
+                        $("#costHeater").html(calculationOfCosts(power) + " грн/час");
                     }
                     if(protection != "null") {
                         $("#protectionHeater").html(protection);

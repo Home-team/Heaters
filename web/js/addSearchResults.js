@@ -72,18 +72,15 @@ function addSearchResults(request) {
                     }
                     id = response[i]["id"];
                     name = response[i]["name"];
-                    description = "";
+                    description = "| ";
                     if (response[i]["type"] != "null") {
                         description += response[i]["type"] + " | ";
-                    }
-                    if (response[i]["producer"] != "null") {
-                        description += response[i]["producer"] + " | ";
                     }
                     if (response[i]["covering"] != "null") {
                         description += response[i]["covering"] + " кв. м | ";
                     }
                     if (response[i]["power"] != "null") {
-                        description += response[i]["power"] + " кВт | ";
+                        description += response[i]["power"] + " кВт | " + calculationOfCosts(response[i]["power"]) + " грн/час | ";
                     }
                     if (response[i]["protection"] != "null") {
                         description += response[i]["protection"] + " | ";

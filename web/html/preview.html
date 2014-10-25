@@ -14,6 +14,7 @@
     <script src="../js/jquery.reveal.js"></script>
     <script src="../js/preview.js"></script>
     <script src="../js/checkAuthorization.js"></script>
+    <script src="../js/calculationOfCosts.js"></script>
 </head>
 <body>
 <div class="container">
@@ -77,6 +78,10 @@
                                     <td id="powerHeater">нет данных</td>
                                 </tr>
                                 <tr>
+                                    <td class="boldText tdWidth">Затратность</td>
+                                    <td id="costHeater">нет данных</td>
+                                </tr>
+                                <tr>
                                     <td class="boldText tdWidth">Функции защиты</td>
                                     <td id="protectionHeater">нет данных</td>
                                 </tr>
@@ -90,7 +95,7 @@
                     </div>
                     <div class="tab-pane" id="tab2">
                         <div id="modalAddComment" class="myCenter reveal-modal">
-                            <textarea id="commentUser" class="myTextArea" placeholder="Ваш комментарий" maxlength="250"
+                            <textarea id="commentUser" class="myTextArea" placeholder="Ваш комментарий" maxlength="500"
                                       rows="6"></textarea>
                             <br>
                             <button id="submitComment" class="btn">Отправить</button>

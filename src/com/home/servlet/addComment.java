@@ -23,7 +23,7 @@ public class addComment extends HttpServlet {
         String text = req.getParameter("comment");
         System.out.println(text);
         java.util.Date d = new java.util.Date();
-        if(text.length() <= 200) {
+        if(text.length() <= 500) {
             Comment comment = new Comment();
             comment.setName(((User)req.getSession().getAttribute("user")).getLogin());
             comment.setText(text);
