@@ -25,9 +25,9 @@ $(document).ready(function () {
                     var elem = $("#photoHeater");
                     for (var i = 0; i in response[0]["images"] != false; i++) { //добавление фото обогревателей
                         elem.append("" +
-                            "<a href='" + response[0]["images"][i]["url"] + "' class='thumbnail myThumbnail' " +
+                            "<a href='/img/heaters/" + response[0]["images"][i]["url"] + "' class='thumbnail myThumbnail' " +
                             "data-lightbox='roadtrip'><img " +
-                            "src='" + response[0]["images"][i]["url"] + "'/></a>");
+                            "src='/img/heaters/" + response[0]["images"][i]["url"] + "'/></a>");
                     }
                     var name = response[0]["name"];
                     var type = response[0]["type"];
@@ -47,16 +47,16 @@ $(document).ready(function () {
                         $("#producerHeater").html(producer);
                     }
                     if(covering != "null") {
-                        $("#coveringHeater").html(covering);
+                        $("#coveringHeater").html(covering + " кв. м");
                     }
                     if(power != "null") {
-                        $("#powerHeater").html(power);
+                        $("#powerHeater").html(power + " кВт");
                     }
                     if(protection != "null") {
                         $("#protectionHeater").html(protection);
                     }
                     if(price != "null") {
-                        $("#priceHeater").html(price);
+                        $("#priceHeater").html(price + " грн");
                     }
                 },
                 error: function () {

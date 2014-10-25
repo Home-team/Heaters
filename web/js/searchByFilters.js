@@ -13,9 +13,9 @@ $(document).ready(function () {
             coveringTo = null;
         } else {
             switch (tmp) {
-                case "Менее 10":
-                    coveringFrom = null;
-                    coveringTo = 9;
+                case "0-10":
+                    coveringFrom = 0;
+                    coveringTo = 11;
                     break;
                 case "10-15":
                     coveringFrom = 10;

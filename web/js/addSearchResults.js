@@ -66,7 +66,7 @@ function addSearchResults(request) {
 
                 for (var i = 0; i in response != false; i++) {
                     if (response[i]["images"].length == 0) {
-                        url = "img/no-image.jpg";
+                        url = "no-image.jpg";
                     } else {
                         url = response[i]["images"][0]["url"];
                     }
@@ -93,7 +93,7 @@ function addSearchResults(request) {
                     $("#tableOfResults").append("" +
                         "<tr>" +
                         "   <td>" +
-                        "       <img src='" + url + "' >" +
+                        "       <img src='/img/heaters/" + url + "' >" +
                         "   </td>" +
                         "   <td>" +
                         "       <a href='/preview?id=" + id + "'><h3>" + name + "</h3></a>" +
