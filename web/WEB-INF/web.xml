@@ -133,6 +133,16 @@
         <url-pattern>/searchByName</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>one</servlet-name>
+        <servlet-class>com.home.servlet.One</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>one</servlet-name>
+        <url-pattern>/one</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>/html/searchByFilters.html</welcome-file>
     </welcome-file-list>

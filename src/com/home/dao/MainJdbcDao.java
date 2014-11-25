@@ -4,6 +4,7 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 
+import java.io.File;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
@@ -32,7 +33,6 @@ public class MainJdbcDao {
         } catch (Exception e) {
             System.err.println("Error load properties!");
         }
-
         basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(props.getProperty("H2_DRIVER_CLASS"));
         basicDataSource.setUrl(props.getProperty("H2_URL_START") + props.getProperty("H2_PATH") + props.getProperty("H2_URL_END"));

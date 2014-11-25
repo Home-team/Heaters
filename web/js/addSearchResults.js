@@ -85,7 +85,12 @@ function addSearchResults(request) {
                     if (response[i]["protection"] != "null") {
                         description += response[i]["protection"] + " | ";
                     }
-                    price = response[i]["price"] + " грн";
+
+                    if (response[i]["price"] != "null") {
+                        price = response[i]["price"] + " грн";
+                    } else {
+                        price = "Нет данных";
+                    }
 
                     $("#tableOfResults").append("" +
                         "<tr>" +
